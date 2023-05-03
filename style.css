@@ -1,0 +1,258 @@
+/*-------Root så jeg det nemmere for mig at skifte farve--------*/
+:root {
+    --header: #DFD3C3;
+    --footer: #DFD3C3;
+    --grid-item: #C7B198;
+    --background: #596E79;
+    --text: #596E79;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+}
+
+body {
+    margin: 0%;
+}
+
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--header);
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: 999;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+footer {
+    background-color: var(--footer);
+    text-align: center;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+main {
+    padding-top: 250px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    color: #596E79;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    padding-top: 5px;
+    font-family: 'Tilt Warp', cursive;
+    font-size: 2.5em;
+    margin: 0%;
+    color: var(--text);
+}
+
+h4 {
+    font-size: 2em;
+    font-family: 'Tilt Warp', cursive;
+    color: white;
+}
+
+/*----------Grid container styling----------*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 500px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1800px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/*----------Grid Item Styling----------*/
+.grid-item {
+    padding-top: 50px;
+    padding-bottom: 25px;
+    background-color:var(--grid-item);
+    text-align: center;
+    border-radius: 25px;
+}
+
+.grid-item img {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 100px;
+}
+
+.grid-item p {
+    position: relative;
+    font-family: 'Caveat', cursive;
+    font-size: 2.5em;
+    margin: 0%;
+    bottom: 80px;
+}
+
+/*----------Button Position---------*/
+#update-button {
+    right: 10px;
+}
+
+#delete-button {
+    left: 10px;
+}
+/*----------Button Styling----------*/
+.button {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  }
+  
+  .button:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  .button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+/*------------Dialog Styling-------------*/
+/*--More info dialog--*/
+#more-info-dialog {
+    height: 1080px;
+    width: 1500px;
+    background-color: var(--background);
+}
+
+#more-info-dialog label {
+    color: white;
+    font-size: 3em;
+    font-family: 'Tilt Warp', cursive;
+
+}
+
+#more-info-dialog img {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    border-radius: 25px;
+}
+
+#more-info-text-container {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+#more-info-name,
+#more-info-location,
+#more-info-camera {
+    font-size: 3em;
+    color: white;
+    margin: 20px;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+
+}
+
+#more-info-title {
+    position: absolute;
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-family: 'Caveat', cursive;
+    font-size: 4em;
+    transform:translate(800px, -40px);
+    border-radius: 25px;
+}
+
+#close-more-info-dialog {
+    position: absolute;
+    bottom: 25px;
+    left: 675px;
+}
+
+
+  /*----------Diverse----------*/
+  #profile-picture {
+    position: absolute;
+    transform:
+     translate(-1100%, -150%);
+     scale: 50%;
+    border-radius: 50%;
+}
+
+#profile-name {
+    position: absolute;
+    transform:
+     translate(-680%, 5px);
+    }
+
+#polaroid-container {
+    height: 630px;
+}
+
+#update-post-picture {
+    width: 500px;
+    height: 500px;
+}
+
+#more-info-picture {
+    width: 768px;
+    height: 768px;
+}
