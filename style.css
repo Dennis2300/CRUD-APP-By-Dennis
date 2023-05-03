@@ -36,6 +36,10 @@ footer {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     animation: fadeIn 1s;
+    font-size: 2em;
+    color: #596E79;
+    padding: 5px;
+    font-family: 'Tilt Warp', cursive;
 }
 
 main {
@@ -183,6 +187,7 @@ h4 {
     width: 1500px;
     background-color: var(--background);
     border-radius: 25px;
+    animation: fadeIn 0.3s;
 }
 
 #more-info-dialog label {
@@ -238,7 +243,7 @@ h4 {
 
 
   /*----------Diverse----------*/
-  #profile-picture {
+#profile-picture {
     position: absolute;
     transform:
      translate(-1100%, -150%);
@@ -249,7 +254,7 @@ h4 {
 #profile-name {
     position: absolute;
     transform:
-     translate(-680%, 5px);
+     translate(-700%, 5px);
     }
 
 #polaroid-container {
