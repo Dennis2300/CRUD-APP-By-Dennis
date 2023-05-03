@@ -76,7 +76,7 @@ function showPosts(listOfPosts) {
 //----------------------DOM-----------------//
 function showPost(postObject) {
     const html = /*html*/ `
-        <article class = "grid-item">
+        <article class = "grid-item linear">
             <div id = "polaroid-container">
                 <image src = "${postObject.image}"></image>
                 <p>${postObject.title}</p>
