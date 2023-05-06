@@ -1,112 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD App by Dennis</title>
-    <link rel="stylesheet" href="style.css">
-<!--Google Fonts-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Tilt+Warp&display=swap" rel="stylesheet">
-
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <h1 class="rainbow-text">CRUD PHOTO GALLERY</h1>
-        <button id = "create-post-dialog-button" class = "button">Create new post</button>
-        <image id = "profile-picture" src = "https://filerepository.itslearning.com/78938eec-378f-4735-ace3-4258f1d59322"></image>
-        <a id = "profile-name" style="font-family: Arial, Helvetica, sans-serif; color: #596E79 ;">Dennis-Zixiang Zhou</a>
+      <h1 class="rainbow-text">CRUD PHOTO GALLERY</h1>
+      <div id="profile-container">
+        <image
+          id="profile-picture"
+          src="https://filerepository.itslearning.com/78938eec-378f-4735-ace3-4258f1d59322"
+        ></image>
+        <br />
+        <a
+          id="profile-name"
+          style="font-family: Arial, Helvetica, sans-serif; color: #596e79"
+          >Dennis-Zixiang Zhou</a
+        >
+      </div>
+      <button id="create-post-dialog-button" class="button">
+        Create new post
+      </button>
+      <!---------------Search and Sort functions------------------------>
+      <br />
+      <br />
+      <input type="search" id="input-search" placeholder="Search by title" />
+      <div id="sort-by-container">
+        <label for="select-sort-by"
+          >Sort by:
+          <select id="select-sort-by">
+            <option value="" selected>No sort</option>
+            <option value="title">Title</option>
+            <option value="country">Country</option>
+            <option value="camera">Camera</option>
+          </select>
+        </label>
+      </div>
     </header>
 
     <main>
-        <section id = "display-posts" class = "grid-container"></section>
+      <section id="display-posts" class="grid-container"></section>
     </main>
-    
+
     <!-----------------------More info--------------------------------->
-    <dialog id = "more-info-dialog">
-            <image id = "more-info-picture"></image>
-            <p id = "more-info-title"></p>
-        <div id = "more-info-text-container">
-            <label for="more-info-name">Photographer:</label>
-                <h4 id = "more-info-name"></h4>
-            <label for="more-info-location">Picture taken in:</label>
-                <p id = "more-info-location"></p>
-            <label for="more-info-camera">Camera:</label>
-            <p id = "more-info-camera"></p>
-        </div>
-            <form id="close-more-info-dialog" method="dialog">
-                <button class="button" style="font-size: 2em; padding: 25px;">Close</button>
-           </form>
+    <dialog id="more-info-dialog">
+      <image id="more-info-picture"></image>
+      <p id="more-info-title"></p>
+      <div id="more-info-text-container">
+        <label for="more-info-name">Photographer:</label>
+        <h4 id="more-info-name"></h4>
+        <label for="more-info-location">Picture taken in:</label>
+        <p id="more-info-location"></p>
+        <label for="more-info-camera">Camera:</label>
+        <p id="more-info-camera"></p>
+      </div>
+      <form id="close-more-info-dialog" method="dialog">
+        <button class="button" style="font-size: 2em; padding: 25px">
+          Close
+        </button>
+      </form>
     </dialog>
 
     <!-----------------------Create Post--------------------------------->
-    <dialog id = "create-post-dialog">
-        <h2>Create a new post</h2>
-        <form id = "form-create-post" method = "dialog">
-            <label for = "image">Image link:</label>
-                <input id = "image" type="url" name = "image" placeholder = "Put your image link here">
-            
-            <label for="location">Country:</label>
-                <input id = "location" type="text" name = "location" placeholder="Location of the picture">
-            
-            <label for="city">City:</label>
-                <input id = "city" type="text" name = "city" placeholder="Paris, Berlin, Rome, etc">
-
-            <label for="title">Title:</label>
-                <input id = "title" type="text" name = "title" placeholder = "Write a caption for your picture">
-        
-            <label for="name">Full Name:</label>
-                <input id = "name" type="text" name = "name" placeholder = "Your Full Name">
-    
-            <label for="camera">Camera:</label>
-                <input id = "camera" type="text" name = "camera" placeholder="Iphone, Sony, Canon, etc.">
-
-            <button class = "button">Create Post</button>
-        </form>
+    <dialog id="create-post-dialog">
+      <h2 class="rainbow-text" style="margin: 0%; height: 55px">
+        Create a new post
+      </h2>
+      <form id="form-create-post" method="dialog">
+        <label for="image">Image link:</label><br />
+        <input
+          id="image"
+          type="url"
+          name="image"
+          placeholder="Put your image link here"
+          required
+        />
+        <br />
+        <label for="location">Country:</label><br />
+        <input
+          id="location"
+          type="text"
+          name="location"
+          placeholder="France, Germnay, Italy, etc."
+          required
+        />
+        <br />
+        <label for="city">City:</label><br />
+        <input
+          id="city"
+          type="text"
+          name="city"
+          placeholder="Paris, Berlin, Rome, etc"
+        />
+        <br />
+        <label for="title">Title:</label><br />
+        <input
+          id="title"
+          type="text"
+          name="title"
+          placeholder="Write a caption for your picture"
+          required
+        />
+        <br />
+        <label for="name">Full Name:</label><br />
+        <input
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Your Full Name"
+          required
+        />
+        <br />
+        <label for="camera">Camera:</label><br />
+        <input
+          id="camera"
+          type="text"
+          name="camera"
+          placeholder="Iphone, Sony, Canon, etc."
+        />
+        <br />
+        <button style="bottom: -55px" class="button">Create Post</button>
+      </form>
     </dialog>
 
     <!-----------------------Update Post--------------------------------->
-    <dialog id = "update-post-dialog">
-        <h2>Update current post</h2>
-        <div id = "update-post-picture-container">
-            <image id = "update-post-picture"></image>
-        </div>
-            <form id = "form-update-post" method="dialog">
-                <label for="update-image">New image:</label>
-                    <input id = "update-image" type="url" name = "image" placeholder="New image link here">
-                
-                <label for="update-location">New location:</label>
-                    <input id = "update-location" type="text" name = "location" placeholder = "New location">
-
-                <label for="update-title">New Title:</label>
-                    <input id ="update-title" type="text" name ="title" placeholder="Write a new caption here">
-
-                <label for="update-name">New name:</label>
-                    <input id ="update-name" type="text" name = "name" placeholder = "New full name">
-                
-                <label for="update-camera">New Camera:</label>
-                    <input id = "update-camera" type="text" name = "camera" placeholder="New camera">
-
-            <button class="button">Update</button>
-            </form>
+    <dialog id="update-post-dialog">
+      <h2 style="margin-top: 0%; margin-bottom: 30px; color: white">
+        Update current post
+      </h2>
+      <div id="update-post-picture-container">
+        <image id="update-post-picture"></image>
+      </div>
+      <form id="form-update-post" method="dialog">
+        <label for="update-image">New image:</label><br />
+        <input
+          id="update-image"
+          type="url"
+          name="image"
+          placeholder="New image link here"
+        />
+        <br />
+        <label for="update-location">New country:</label><br />
+        <input
+          id="update-location"
+          type="text"
+          name="location"
+          placeholder="New location"
+        />
+        <br />
+        <label for="update-city">New city:</label><br />
+        <input
+          id="update-city"
+          type="text"
+          name="city"
+          placeholder="New city"
+        />
+        <br />
+        <label for="update-title">New Title:</label><br />
+        <input
+          id="update-title"
+          type="text"
+          name="title"
+          placeholder="Write a new caption here"
+        />
+        <br />
+        <label for="update-name">New name:</label><br />
+        <input
+          id="update-name"
+          type="text"
+          name="name"
+          placeholder="New full name"
+        />
+        <br />
+        <label for="update-camera">New Camera:</label><br />
+        <input
+          id="update-camera"
+          type="text"
+          name="camera"
+          placeholder="New camera"
+        />
+        <br />
+        <button id="update-post-button" class="button">Update</button>
+      </form>
     </dialog>
 
     <!-----------------------Delete Post--------------------------------->
-    <dialog id = "delete-post-dialog">
-        <h2>Are you sure you want to delete this post?</h2>
-        <p id = "delete-post-title">Title of the post</p>
-            <form id = "form-delete-post" method="dialog">
-                <button id = "cancel-delete" type="button" class="button">No</button>
-                <button class="button">Yes</button>
-            </form>
+    <dialog id="delete-post-dialog">
+      <h2 style="color: white">Are you sure you want to delete this post?</h2>
+      <p id="delete-post-title">Title of the post</p>
+      <form id="form-delete-post" method="dialog">
+        <button
+          id="cancel-delete"
+          type="button"
+          class="button-2"
+          style="background-color: #61907a"
+        >
+          No
+        </button>
+        <button
+          id="confirm-delete"
+          class="button-2"
+          style="background-color: #9f4a5c"
+        >
+          Yes
+        </button>
+      </form>
     </dialog>
-    
-    <footer>Made By Dennis-Zixiang Zhou
-        <br>
-        <a href="https://github.com/Dennis2300/CRUD-APP-By-Dennis" target="_blank">Github</a>
-        </footer>
+
+    <footer>
+      Made By Dennis-Zixiang Zhou
+      <br />
+      <a href="https://github.com/Dennis2300/CRUD-APP-By-Dennis" target="_blank"
+        >Github</a
+      >
+    </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
