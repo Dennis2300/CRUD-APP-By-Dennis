@@ -276,7 +276,7 @@ h4 {
 
 #update-post-button {
   position: absolute;
-  bottom: -250px;
+  bottom: -200px;
   left: 350px;
 }
 
@@ -331,7 +331,7 @@ h4 {
   color: white;
   font-size: 2em;
   text-align: center;
-  height: 600px;
+  height: 630px;
   border-color: black;
   border-radius: 25px;
   animation: fadeIn 0.3s;
@@ -344,6 +344,12 @@ h4 {
 #name,
 #camera {
   width: 75%;
+}
+
+#close-create-button{
+  position: absolute;
+  bottom: 25px;
+  left: 194px;
 }
 
 /*------------Search & Sort-------------*/

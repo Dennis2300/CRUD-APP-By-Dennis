@@ -37,6 +37,7 @@ function initApp() {
 //---------Create Post----------//
 function showCreatePost() {
   console.log("opened create post dialog!");
+  document.querySelector("#close-create-button").addEventListener("click", closeCreateButton )
   document.querySelector("#create-post-dialog").showModal();
 }
 
@@ -223,9 +224,10 @@ function closeDeleteConfirmation() {
   document.querySelector("#delete-post-dialog").close();
 }
 
-function closeUpdateDialog() {
-  document.querySelector("#update-post-dialog").close();
+function closeCreateButton() {
+  document.querySelector("#create-post-dialog").close()
 }
+
 
 //----------------Search function----------------------------//
 function inputSearchChanged(event) {
