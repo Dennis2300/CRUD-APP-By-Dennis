@@ -1,7 +1,7 @@
 "use strict";
 
 const endpoint =
-  "https://fir-database-rest-api-dff4b-default-rtdb.europe-west1.firebasedatabase.app/";
+  "https://gallery-database-163bc-default-rtdb.europe-west1.firebasedatabase.app/";
 let posts;
 
 window.addEventListener("load", initApp);
